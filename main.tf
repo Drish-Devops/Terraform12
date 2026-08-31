@@ -29,3 +29,16 @@ resource "azurerm_storage_account" "example" {
   account_tier             = "Standard"
   account_replication_type = "GRS"
 }
+
+resource "azurerm_resource_group" "RG34" {
+  name     = "rg-Drishya"
+  location = "East US"
+}
+
+resource "azurerm_storage_account" "example" {
+  name                     = "harpreetstorageacc"
+  resource_group_name      = "rg-Drishya"
+  location                 = "East US"
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+}
